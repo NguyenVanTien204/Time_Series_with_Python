@@ -25,35 +25,44 @@ Các cột trong tập dữ liệu:
 `snap_TX`: Tương tự cho bang Texas
 `snap_WI`: Tương tự cho bang Wisconsin
 
-## 2. mô tả từng cột
+## 2. phương pháp kết quả phân tích từng cột
 
 **d**
+kiểm tra sự liên tục bằng phép lặp chạy liên tục xem d_1 có tăng thêm 1 đơn vị sau mỗi ngày không
 
 - chạy từ liên tục từ d_1 đến d_1969 -> dữ liệu hợp lệ
   **date**
+  kiểm tra xem có đủ các ngày trong khoảng thời gian từ 29-1-2011 đến 19-6-2016 chạy liên tục không
 - Ngày nhỏ nhất: 2011-01-29 00:00:00
 - Ngày lớn nhất: 2016-06-19 00:00:00
 - Tổng số ngày trong khoảng: 1969
 - Số ngày có trong dữ liệu: 1969
 - Số ngày bị thiếu: 0
   **wm_yr_wk**
+  kiểm tra xem 1 năm có đủ 52 tuần (trừ năm 2013 là 53) không
 - Boxplot trải đều, không có outlier rõ rệt
 - Phân bố tuần trong năm đồng đều
   **wday**
+  kiểm tra xem có chạy theo chu kỳ từ 1-7 lặp lại liên tục ko
 - Giá trị nằm trong khoảng 1–7, đúng với ngày trong tuần
 - Không có outlier → dữ liệu hợp lệ
   **mont**
+  kiểm tra xem dữ liệu có trùng khớp với dữ liệu tháng của cột date ko
 - Giá trị từ 1–12, đúng quy luật tháng
-- Không có outlier.**year**
+- Không có outlier.
+  **year**
+  kiểm tr dữ liệu có trùng khớp với dữ liệu năm của cột date không
 - Trải từ 2011–2016, đúng khoảng thời gian dataset Walmart
 - Không có năm ngoài phạm vi này
   **snap_CA, snap_TX, snap_WI (binary: 0/1)**
+  kiểm tra có giá trị nào khác 0 hoặc 1 không
 - Boxplot cho thấy phân bố nhị phân (đa số giá trị = 0, một số = 1)
 - Không có outlier (vì chỉ nhận 0 hoặc 1)
 - Có thể phân tích thêm tỷ lệ ngày có SNAP event theo từng bang
 
 ## 3. Các phát hiện chính
 
+- không có mismatch của 2 cặp event_name với event type 1 và 2
 - cột wm_yr_wk được tính theo lịch walmart retail calendar
 - các dữ liệu trong bộ dữ liệu đã đưa về dạng chuẩn
 - không phát hiện dữ liệu trùng lặp, ngoại lai, bất thường
