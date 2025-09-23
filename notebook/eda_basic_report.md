@@ -43,7 +43,7 @@ kiểm tra sự liên tục bằng phép lặp chạy liên tục xem d_1 có t�
 - Boxplot trải đều, không có outlier rõ rệt
 - Phân bố tuần trong năm đồng đều
   **wday**
-  kiểm tra xem có chạy theo chu kỳ từ 1-7 lặp lại liên tục ko
+  kiểm tra xem có chạy theo chu kỳ từ 1-7 lặp lại liên tục không
 - Giá trị nằm trong khoảng 1–7, đúng với ngày trong tuần
 - Không có outlier → dữ liệu hợp lệ
   **mont**
@@ -51,7 +51,7 @@ kiểm tra sự liên tục bằng phép lặp chạy liên tục xem d_1 có t�
 - Giá trị từ 1–12, đúng quy luật tháng
 - Không có outlier.
   **year**
-  kiểm tr dữ liệu có trùng khớp với dữ liệu năm của cột date không
+  kiểm tra dữ liệu có trùng khớp với dữ liệu năm của cột date không
 - Trải từ 2011–2016, đúng khoảng thời gian dataset Walmart
 - Không có năm ngoài phạm vi này
   **snap_CA, snap_TX, snap_WI (binary: 0/1)**
@@ -62,6 +62,10 @@ kiểm tra sự liên tục bằng phép lặp chạy liên tục xem d_1 có t�
 
 ## 3. Các phát hiện chính
 
+Danh sách cột: ['date', 'wm_yr_wk', 'weekday', 'wday', 'month', 'year', 'd', 'event_name_1', 'event_type_1', 'event_name_2', 'event_type_2', 'snap_CA', 'snap_TX', 'snap_WI']
+
+- Không có cột trùng lặp.
+- Không có cột chứa ký tự đặc biệt hoặc khoảng trắng.
 - không có mismatch của 2 cặp event_name với event type 1 và 2
 - cột wm_yr_wk được tính theo lịch walmart retail calendar
 - các dữ liệu trong bộ dữ liệu đã đưa về dạng chuẩn
