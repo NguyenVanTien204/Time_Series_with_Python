@@ -30,7 +30,7 @@ Các cột trong tập dữ liệu:
 **d**
 kiểm tra sự liên tục bằng phép lặp chạy liên tục xem d_1 có tăng thêm 1 đơn vị sau mỗi ngày không
 
-- chạy từ liên tục từ d_1 đến d_1969 -> dữ liệu hợp lệ
+- chạy liên tục từ d_1 đến d_1969 -> dữ liệu hợp lệ
   **date**
   kiểm tra xem có đủ các ngày trong khoảng thời gian từ 29-1-2011 đến 19-6-2016 chạy liên tục không
 - Ngày nhỏ nhất: 2011-01-29 00:00:00
